@@ -1,0 +1,19 @@
+<Tariffs>
+    <Tariff id="t1">
+        <Name>Basic Plan</Name>
+        <OperatorName>Operator A</OperatorName>
+        <Payroll>100</Payroll>
+        <CallPrices>
+            <InsideNetwork>0.5</InsideNetwork>
+            <OutsideNetwork>1.0</OutsideNetwork>
+            <Landline>1.5</Landline>
+        </CallPrices>
+        <SMSPrice>0.2</SMSPrice>
+        <Parameters>
+            <FavoriteNumbers>2</FavoriteNumbers>
+            <Tariffication>Minute</Tariffication>
+            <ConnectionFee>10</ConnectionFee>
+        </Parameters>
+    </Tariff>
+    <!-- Додаткові тарифи -->
+</Tariffs>

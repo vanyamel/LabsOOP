@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="Tariffs">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Tariff" type="TariffType" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="TariffType">
+        <xs:sequence>
+            <xs:element name="Name" type="xs:string"/>
+            <xs:element name="OperatorName" type="xs:string"/>
+            <xs:element name="Payroll" type="xs:decimal"/>
+            <xs:element name="CallPrices" type="CallPricesType"/>
+            <xs:element name="SMSPrice" type="xs:decimal"/>
+            <xs:element name="Parameters" type="ParametersType"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:ID" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="CallPricesType">
+        <xs:sequence>
+            <xs:element name="InsideNetwork" type="xs:decimal"/>
+            <xs:element name="OutsideNetwork" type="xs:decimal"/>
+            <xs:element name="Landline" type="xs:decimal"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="ParametersType">
+        <xs:sequence>
+            <xs:element name="FavoriteNumbers" type="xs:int"/>
+            <xs:element name="Tariffication" type="TarifficationType"/>
+            <xs:element name="ConnectionFee" type="xs:decimal"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="TarifficationType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="12-seconds"/>
+            <xs:enumeration value="Minute"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>
